@@ -37,9 +37,7 @@ public class Zadanie7v2 {
     }
 
     static void fillArray(char [] array, Scanner in) {
-        int j = 1;
-        boolean check = false;
-        for (int i = 0; i <= 9; i++) {
+        for (int i = 0; i < array.length; i++) {
 
             array[i] = setChar(array[i], in);
 
@@ -47,8 +45,10 @@ public class Zadanie7v2 {
 
                 break;
             }
-            else if(i==9){
-                newArray(array, in);
+            else if(i==array.length-1){
+                char [] array2 = newArray(array, in);
+                fillArray(array2, in);
+
             }
 //            check = checkIfNewArray(j, array.length);
 //
@@ -60,28 +60,31 @@ public class Zadanie7v2 {
     }
 
 
-    static void newArray(char [] array, Scanner in){
+    static char[] newArray(char [] array, Scanner in){
 
             char[] array2 = doublingArray(2 * array.length);
 
-            for (int i = 0; i < array2.length; i++) {
+            return array2;
 
-                if (i < array2.length) {
 
-                    array2[i] = array[i];
-
-                    if (ifBreak(array[i])) {
-                        break;
-                    }
-
-                } else if (i == array.length - 1) {
-
-                    newArray(array, in);
-
-                } else if (i > array.length)
-
-                    array2[i] = setChar(array[i], in);
-            }
+//            for (int i = 0; i < array2.length; i++) {
+//
+//                if (i < array2.length) {
+//
+//                    array2[i] = array[i];
+//
+//                    if (ifBreak(array[i])) {
+//                        break;
+//                    }
+//
+//                } else if (i == array.length - 1) {
+//
+//                    newArray(array, in);
+//
+//                } else if (i > array.length)
+//
+//                    array2[i] = setChar(array[i], in);
+//            }
 
         }
 
@@ -89,7 +92,7 @@ public class Zadanie7v2 {
 
     public static void main(String[] args) {
 
-        char [] array = new char [10];
+        char [] array = new char [5];
         final int T = 3;
         Scanner in = new Scanner(System.in);
         boolean stop = false;

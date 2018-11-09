@@ -30,35 +30,13 @@ public class Zadanie6 {
 
     }
 
-    public static void main(String[] args) {
+    static int chooseOperation(int choose, int firstNumber, int secondNumber, Scanner in){
 
-    int choose = 0;
+        System.out.println("wybierz operacje");
+        System.out.println();
+        choose = in.nextInt();
 
-        Scanner in = new Scanner(System.in);
-
-        while ( choose!=9){
-
-
-            System.out.println("1. Dodawanie");
-            System.out.println("2. Odejmowanie");
-            System.out.println("3. Mnozenie");
-            System.out.println("4. dzielenie");
-            System.out.println();
-
-
-            System.out.println("wybierz operacje");
-            System.out.println();
-            choose = in.nextInt();
-
-            System.out.println("Podaj pierwsza liczbe: ");
-            int firstNumber = in.nextInt();
-
-
-            System.out.println("Podaj druga liczbe: ");
-
-            int secondNumber = in.nextInt();
-
-            switch (choose) {
+        switch (choose) {
                 case 1:
                     dodawanie(firstNumber, secondNumber);
                     break;
@@ -73,6 +51,59 @@ public class Zadanie6 {
                     break;
 
             }
+            return choose;
+
+    }
+
+    static void menu(){
+
+
+        System.out.println("1. Dodawanie");
+        System.out.println("2. Odejmowanie");
+        System.out.println("3. Mnozenie");
+        System.out.println("4. dzielenie");
+        System.out.println("9. wyjdz");
+        System.out.println();
+
+    }
+
+    static int setInt(int number, Scanner in){
+        System.out.println("Podaj "+number+" liczbe: ");
+        int inputNumber = in.nextInt();
+        return inputNumber;
+    }
+
+    public static void main(String[] args) {
+
+        int choose = 0;
+        Scanner in = new Scanner(System.in);
+
+
+        while ( choose!=9){
+
+            menu();
+
+            int firstNumber = setInt(1, in);
+
+            int secondNumber = setInt(2, in);
+
+            choose = chooseOperation(choose, firstNumber, secondNumber, in);
+
+//            switch (choose) {
+//                case 1:
+//                    dodawanie(firstNumber, secondNumber);
+//                    break;
+//                case 2:
+//                    odejmowanie(firstNumber, secondNumber);
+//                    break;
+//                case 3:
+//                    mnozenie(firstNumber, secondNumber);
+//                    break;
+//                case 4:
+//                    dzielenie(firstNumber, secondNumber);
+//                    break;
+//
+//            }
 
 
         }

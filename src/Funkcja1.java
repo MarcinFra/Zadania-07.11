@@ -35,7 +35,7 @@ public class Funkcja1 {
             sum += inputArray[i];
         }
 
-        return sum/inputArray.length;
+        return (double)sum/inputArray.length;
     }
 
 

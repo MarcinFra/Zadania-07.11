@@ -17,15 +17,9 @@ public class FibonacciRecursive {
         return scanner.nextInt();
     }
 
-    static int countFibonacci(int numberToCount){
+    static int countFibonacci(int n){
 
-        if(numberToCount == 0){
-            return 0;
-        }else if(numberToCount ==1){
-            return 1;
-        }else{
-         return countFibonacci(numberToCount-1) + countFibonacci(numberToCount-2);
-        }
+        return n<2 ? n:countFibonacci(n-1) + countFibonacci(n-2);
     }
 
     static void showFibNumber(int fibonnaciNumber){

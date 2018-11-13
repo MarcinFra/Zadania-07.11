@@ -4,12 +4,22 @@ public class Latin {
 
     public static void main(String[] args) {
 
-        char [] latinArray = new char[25];
+        char [] latinArray = createLatinArray();
         String string = setString();
-        char [] array = ReplaceSpaces(string);
-        latinArray = iteration(latinArray);
+        char [] stringArray = ReplaceSpaces(string);
 
     }
+
+    static char[] createLatinArray(){
+        char [] array = new char[25];
+
+        for(int i = 0; i<array.length; i++){
+            array[i] = (char)(97+i);
+        }
+        return array;
+    }
+
+
 
     static String setString(){
 
@@ -28,10 +38,7 @@ public class Latin {
         return array;
     }
 
-    static void createLatinArray(){
 
-        char [] array = new char[25];
-    }
 
     static char[] iteration(char []array){
 

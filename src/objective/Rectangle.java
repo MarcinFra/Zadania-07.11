@@ -1,18 +1,18 @@
 package objective;
 
-public class rectangle extends Figure{
+public class Rectangle extends Figure{
 
     protected double a;
     protected double b;
 
 
-    public rectangle(String color, double a, double b) {
+    public Rectangle(String color, double a, double b) {
         super(color);
         this.a = a;
         this.b = b;
     }
 
-    public rectangle(String color, double a){
+    public Rectangle(String color, double a){
         this(color, a, a);
     }
 
@@ -25,20 +25,13 @@ public class rectangle extends Figure{
     public void setB(double b) { this.b = b; }
 
 
-    public double countArea(double a, double b){
+    public double countArea(){
         return a*b;
     }
 
-    public double countArea(double a){
-        return a*a;
-    }
-
-    public double countPerimeter(double a, double b){
+    public double countPerimeter(){
         return 2*a + 2*b;
     }
 
-    public double countPerimeter(double a){
-        return 4*a;
-    }
 
 }

@@ -10,16 +10,33 @@ public class Oop {
 //            diamonds[i] = new Diamond(i,i);
 //        }
 
+        Square myRect = new Square("red",10);
+        Rectangle mySquare = new Rectangle("black",10,20);
+        Triangle myTriangle = new Triangle("yellow",10,30);
 
-        square smallRec = new square("blue",3.0);
+        Figure[] figures = new Figure[3];
+        figures[0] = myRect;
+        figures[1] = mySquare;
+        figures[2] = myTriangle;
 
-        System.out.println(smallRec.countArea(smallRec.getA()));
+        double area = 0.0;
+        for(Figure figure: figures){
+            area += figure.countArea();
+        }
+
+        System.out.println("area of all fields: " + area);
+
+
+
+//        Square smallRec = new Square("blue",3.0);
+//
+//        System.out.println(smallRec.countArea(smallRec.getA()));
 
 
 //        Diamond smallDiamond = new Diamond(10.0,15.0, 5.0);
 //        Diamond bigDiamond = new Diamond(20.0);
-//        rectangle smallRectangle = new rectangle(3.0,4.0);
-//        rectangle bigRectangle = new rectangle(2.0);
+//        Rectangle smallRectangle = new Rectangle(3.0,4.0);
+//        Rectangle bigRectangle = new Rectangle(2.0);
 //
 //
 //        System.out.println("Pole malego rombu: " + smallDiamond.countArea());

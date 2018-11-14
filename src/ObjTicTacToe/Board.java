@@ -16,10 +16,11 @@ public class Board {
         }
     }
 
-    public void setMark(int x,int y,Mark mark){
+    public Field setMark(int x,int y,Mark mark){
 
         field = new Field(x, y, mark);
 
+        return field;
     }
 
     public boolean isEmpty(int x,int y){

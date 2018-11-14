@@ -20,7 +20,7 @@ public class ConsoleReader {
 
     public String readPlayerName(){
 
-        String string = scanner.toString();
+        String string = scanner.next();
 
         return string;
     }

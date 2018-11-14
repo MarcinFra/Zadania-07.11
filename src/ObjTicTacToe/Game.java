@@ -8,6 +8,7 @@ public class Game {
     private Player activePlayer;
     private ConsoleReader reader;
     private GameState gameState;
+    private Field field;
 
     public Game(){
         gameState = GameState.IN_PROGRESS;
@@ -28,7 +29,7 @@ public class Game {
             int coordinateX = reader.readCoordinate();
             int coordinateY = reader.readCoordinate();
 
-            board.setMark(coordinateX, coordinateY, activePlayer.getMark());
+            field = board.setMark(coordinateX, coordinateY, activePlayer.getMark());
 
             System.out.println(board.toString());
 
